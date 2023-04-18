@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { addCourse } from "./courseSlice";
 
 const formSlice = createSlice({
   name: "form",
@@ -24,6 +25,14 @@ const formSlice = createSlice({
         state.image = action.payload;    
     }
   },
+  extraReducers(builder){
+    builder.addCase(addCourse,(state,action) =>{
+        state.name= "",
+        state.discription= "",
+        state.cost = "",
+        state.image = ""
+    })
+  }
 });
 export const { changeName, changeDiscription, changePrice, changeImage } =
   formSlice.actions;

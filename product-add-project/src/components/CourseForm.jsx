@@ -6,14 +6,22 @@ import {
   changeName,
   changePrice,
 } from "../store/slices/formSlice";
+import { addCourse } from "../store/slices/courseSlice";
 
 const CourseForm = () => {
   const dispatch = useDispatch();
   const { name, discription, cost, image } = useSelector((store) => store.form);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+   dispatch(addCourse({name, discription, cost, image})); 
+
+  };
+
   return (
     <div className="courseForm panel">
       <h4 className="subTitle is-3">Add Product</h4>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="field-group">
           <div className="field">
             <label className="label">Name</label>
@@ -50,7 +58,7 @@ const CourseForm = () => {
           </div>
         </div>
         <div className="field">
-          <button className="button is-primary">Save</button>
+          <button type="submit" className="button is-primary">Save</button>
         </div>
       </form>
     </div>
