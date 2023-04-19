@@ -21,6 +21,7 @@ const CourseForm = () => {
   return (
     <div className="courseForm panel">
       <h4 className="subTitle is-3">Add Product</h4>
+      <hr />
       <form onSubmit={handleSubmit}>
         <div className="field-group">
           <div className="field">

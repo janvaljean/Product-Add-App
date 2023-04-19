@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { addCourse } from "./courseSlice";
 
 const formSlice = createSlice({
+    
   name: "form",
 
   initialState: {
